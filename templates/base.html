@@ -1,0 +1,115 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }}</title>
+
+  <meta name="description" content="EMROS builds intelligent hotel room technologies that enhance guest comfort, protect privacy, improve efficiency, and reduce energy costs.">
+  <meta name="keywords" content="EMROS, Hotel Technology, GRMS, Guest Presence System, Energy Management System, Smart Hotel Solutions">
+  <meta name="author" content="EMROS">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="{{ request.url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EMROS">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="Smart hotel technologies for privacy, comfort, and efficiency.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/home-2.png', _external=True) }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="Smart technology. Silent comfort. Better hotels.">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/home-2.png', _external=True) }}">
+
+  <script>
+    (function() {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="preload" as="image" href="{{ url_for('static', filename='images/home-2.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/utilities.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<header class="site-header sticky">
+  <div class="header-container header-row">
+
+    <a href="/" class="brand">emros</a>
+
+    <nav class="primary-nav mega" id="primaryNav">
+      <div class="nav-item">
+        <a href="/">Home</a>
+      </div>
+
+      <div class="nav-item">
+        <a href="#">Services & System Devices</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="/privacy-service">Privacy Service</a></li>
+            <li><a href="/guest-presence-system">Guest Presence System</a></li>
+            <li><a href="/guest-room-management-system">Guest Room Management System</a></li>
+            <li><a href="/energy-management-system">Energy Management System</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+
+    <button id="menuToggle" class="icon-btn mobile-only" aria-label="Open menu">☰</button>
+
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌓</button>
+  </div>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2025 EMROS · Smart Technology. Silent Comfort.</small>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EMROS",
+  "url": "{{ request.url_root }}",
+  "logo": "{{ url_for('static', filename='images/home-2.png', _external=True) }}",
+  "description": "EMROS provides intelligent hotel room technologies for privacy, comfort, energy efficiency, and operational excellence.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9820058032",
+    "contactType": "customer support"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 507, Sarita B, Prabhat Industrial Complex",
+    "addressLocality": "Mumbai",
+    "addressRegion": "MH",
+    "postalCode": "400068",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+</body>
+</html>

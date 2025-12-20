@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <h1>Energy Management System</h1>
+    <p>Smart Savings Without Compromising Guest Comfort</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div>
+      <h2>The Challenge</h2>
+      <p>
+        Hotels face rising energy costs and the constant struggle of balancing efficiency with guest satisfaction.
+        Cooling and heating often account for 45% of total energy usage.
+      </p>
+
+      <h2>The EMROS Solution</h2>
+      <p>
+        Instead of switching everything off, EMROS intelligently adjusts temperature
+        and lighting when rooms are unoccupied. As soon as a guest returns, the room
+        instantly restores their preferred settings.
+      </p>
+
+      <ul class="feature-list">
+        <li>Significantly lower energy bills</li>
+        <li>Zero impact on guest comfort</li>
+        <li>Intelligent PMS integration</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/sol_4_energy saving.jpg') }}" alt="Energy Consumption Chart">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <img src="{{ url_for('static', filename='images/sol_4-1.jpg') }}" alt="Sustainable Earth" style="width: 100%; max-height: 400px; object-fit: cover;">
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div class="card text-center">
+      <img src="{{ url_for('static', filename='images/sol_4-3.png') }}" alt="Energy Controller">
+      <h3 style="margin-top: 20px;">Intelligent Controller</h3>
+    </div>
+    <div class="card text-center">
+      <img src="{{ url_for('static', filename='images/sol_4-2.png') }}" alt="Thermostat Interface">
+      <h3 style="margin-top: 20px;">Guest Interface</h3>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

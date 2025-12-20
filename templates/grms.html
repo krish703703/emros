@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <h1>Guest Room Management System</h1>
+    <p>Smart Comfort for Guests. Intelligent Control for Operators.</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div class="content-block">
+      <h2>Complete Control. <br>Seamless Experience.</h2>
+      <p>
+        The EMROS GRMS enhances guest comfort while giving hotel operators complete control
+        over room operations—blending technology, efficiency, and aesthetics.
+      </p>
+
+      <h3>For Your Guests</h3>
+      <ul class="feature-list">
+        <li>Intuitive lighting control</li>
+        <li>Automatic temperature adjustment</li>
+        <li>Curtains and blinds automation</li>
+        <li>Privacy & service requests</li>
+      </ul>
+
+      <h3>For Your Staff</h3>
+      <p>
+        Centralized monitoring allows staff to respond faster to service requests and identify maintenance issues before they become complaints.
+      </p>
+    </div>
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/Sol_3.jpg') }}" alt="Modern Hotel Room" class="shadow-img">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-light">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <h2>Core System Features</h2>
+      <p>Designed to integrate with PMS, BMS, and third-party access controls.</p>
+    </div>
+
+    <div class="grid gallery">
+      {% for img in [
+        'Sol_3-1.png','Sol_3-2.png','Sol_3-3.png','Sol_3-4.png','Sol_3-5.png',
+        'Sol_3-6.png','Sol_3-7.png','Sol_3-8.png','Sol_3-9.png','Sol_3-10.png',
+        'Sol_3-11.png','Sol_3-12.png'
+      ] %}
+        <div class="gallery-card">
+          <img src="{{ url_for('static', filename='images/' + img) }}" alt="Feature Icon">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

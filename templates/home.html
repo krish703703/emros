@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero-banner">
+  <img
+    src="{{ url_for('static', filename='images/home-2.png') }}"
+    alt="EMROS Smart Hotel Technology"
+    class="hero-banner-img"
+  >
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <h1>
+  Designed for Comfort.<br>
+  Powered by <span class="highlight-text">Intelligence.</span>
+</h1>
+    <p class="lead">
+      Intelligent room technologies that work quietly in the background,</br>so guests enjoy comfort and privacy, and hotels run efficiently.
+    </p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn-primary">Upgrade Your Hotel</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer container">
+  <div class="grid two align-center">
+    <div class="content-block">
+      <h2>What Is EMROS?</h2>
+      <p class="lead-text">We connect rooms, staff, and management—without changing how guests relax.</p>
+      <p>EMROS is a hotel technology company dedicated to creating invisible technology. We help hotels:</p>
+      <ul class="feature-list">
+        <li>Respect guest privacy automatically</li>
+        <li>Improve staff efficiency with real-time data</li>
+        <li>Reduce energy waste in unoccupied rooms</li>
+        <li>Deliver a seamless in-room experience</li>
+      </ul>
+    </div>
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/home-1.png') }}" alt="Smart Thermostat Interface" class="shadow-img">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Designed for People, Not Just Buildings</h2>
+      <p>Technology that serves everyone in the ecosystem.</p>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <h3>For Guests</h3>
+        <p>Enjoy your stay without interruptions. No knocking, no unwanted calls. Just pure comfort and privacy on demand.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛎️</div>
+        <h3>For Hotel Teams</h3>
+        <p>Know exactly what is needed before you act. Housekeeping knows when to clean, and engineering knows what to fix.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>For Owners</h3>
+        <p>Lower operating costs through energy efficiency, higher guest satisfaction scores, and future-ready infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer container">
+  <div class="grid two align-center reverse-mobile">
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/sol_2.jpg') }}" alt="Minimalist Hotel Room" class="shadow-img">
+    </div>
+    
+    <div class="content-block">
+      <h2>Technology Guests Don’t Have to Think About</h2>
+      <p>Great hotel technology shouldn’t be noticed. It should simply work.</p>
+      <ul class="feature-list">
+        <li>Prevent unnecessary disturbances</li>
+        <li>Automatically adjust room comfort</li>
+        <li>Save energy when rooms are empty</li>
+        <li>Maintain the hotel’s brand identity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-dark text-center">
+  <div class="container">
+    <h2 style="color: white;">Why Hotels Choose EMROS</h2>
+    <p class="lead-text" style="color: #e2e8f0; margin: 0 auto 32px auto; max-width: 700px;">
+      From room to reception, we create a connected experience that feels natural and effortless.
+    </p>
+    <a href="/contact" class="btn btn-white">Contact Us Today</a>
+  </div>
+</section>
+
+{% endblock %}
