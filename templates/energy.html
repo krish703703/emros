@@ -2,7 +2,15 @@
 {% block content %}
 
 <section class="page-header">
-  <div class="container">
+  <img 
+    src="{{ url_for('static', filename='images/energy.png') }}" 
+    alt="Energy Management System" 
+    class="page-header-bg"
+  >
+  
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
     <h1>Energy Management System</h1>
     <p>Smart Savings Without Compromising Guest Comfort</p>
   </div>

@@ -2,7 +2,14 @@
 {% block content %}
 
 <section class="page-header">
-  <div class="container">
+  <img 
+    src="{{ url_for('static', filename='images/guest-presence.png') }}" 
+    alt="Guest Presence System" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
     <h1>Guest Presence System</h1>
     <p>Know if a Guest Is in the Room — Without Disturbing Them</p>
   </div>

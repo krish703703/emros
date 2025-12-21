@@ -2,7 +2,14 @@
 {% block content %}
 
 <section class="page-header">
-  <div class="container">
+  <img 
+    src="{{ url_for('static', filename='images/privacy.png') }}" 
+    alt="Privacy Service" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
     <h1>Privacy & Service System</h1>
     <p>Do Not Disturb • Housekeeping • Doorbell</p>
   </div>

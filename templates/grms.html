@@ -2,7 +2,14 @@
 {% block content %}
 
 <section class="page-header">
-  <div class="container">
+  <img 
+    src="{{ url_for('static', filename='images/grms.png') }}" 
+    alt="Guest Room Management" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
     <h1>Guest Room Management System</h1>
     <p>Smart Comfort for Guests. Intelligent Control for Operators.</p>
   </div>
