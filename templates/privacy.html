@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <img 
+    src="{{ url_for('static', filename='images/privacy.png') }}" 
+    alt="Guest Privacy & Service System" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
+    <h1>Guest Privacy & Service System</h1>
+    <p>Do Not Disturb • Housekeeping • Assistance</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center reverse-mobile">
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/sol-privacy-service-2.png') }}" alt="Guest Sleeping Comfortably" class="shadow-img">
+    </div>
+
+    <div class="content-block">
+      <h2>Quiet, respectful communication between guests and staff</h2>
+      <p class="lead-text">
+        EMROS Guest Privacy & Service System allows guests to communicate their needs clearly and respectfully — without phone calls, door knocking, or unnecessary interruptions.
+      </p>
+      
+      <h3>Guests can easily:</h3>
+      <ul class="feature-list">
+        <li>Set Do Not Disturb when they want privacy</li>
+        <li>Request Make Up Room at the right time</li>
+        <li>Ask for Assistance with a simple touch</li>
+      </ul>
+
+      <h3>For hotel teams, this means:</h3>
+      <ul class="feature-list">
+        <li>Clear room status visible before approaching</li>
+        <li>No guessing or awkward interruptions</li>
+        <li>Better timing for housekeeping and service</li>
+      </ul>
+
+      <div class="card" style="margin-top: 32px;">
+        <h3>The Result</h3>
+        <ul class="feature-list">
+          <li>A peaceful guest experience</li>
+          <li>More organized hotel operations</li>
+          <li>Service that feels calm, professional, and respectful</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-light">
+  <div class="container">
+    <div class="grid two">
+      <div>
+        <h3>Smart Status Visibility</h3>
+        <p>
+          Hotel staff can instantly check the occupancy status of any room across the property
+          before approaching it.
+        </p>
+      </div>
+      <div>
+        <h3>Custom Signage</h3>
+        <p>
+          Our signage solutions combine elegant design with smart technology and can be customized
+          to match your hotel’s interior theme.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

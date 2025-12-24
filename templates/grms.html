@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <img 
+    src="{{ url_for('static', filename='images/grms.png') }}" 
+    alt="Guest Room Management" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
+    <h1>Guest Room Management System</h1>
+    <p>A room that adjusts automatically to your guest experience</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div class="content-block">
+      <h2>Customize how guests experience the room</h2>
+      <p>
+        The EMROS Guest Room Management System helps hotels define how they want the guest experience to feel.
+        Hotels can set simple rules that decide what happens when a guest enters the room, stays inside, or leaves.
+      </p>
+
+      <p>
+        For example, when a guest enters, lighting can switch on and the air-conditioning can adjust to a preset comfort level. When the room is not in use, settings return to the hotel’s preferred state — all automatically and without guest effort.
+      </p>
+
+      <h3>With GRMS, hotels can:</h3>
+      <ul class="feature-list">
+        <li>Customize room behaviour to match their brand experience</li>
+        <li>Set automatic actions when a guest enters or leaves</li>
+        <li>Control lighting, temperature, curtains, and room scenes</li>
+        <li>Deliver a consistent and comfortable stay for every guest</li>
+      </ul>
+    </div>
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/Sol_3.jpg') }}" alt="Modern Hotel Room" class="shadow-img">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-light">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <h2>Core System Features</h2>
+      <p>Designed to integrate with PMS, BMS, and third-party access controls.</p>
+    </div>
+
+    <div class="grid gallery">
+      {% for img in [
+        'Sol_3-1.png','Sol_3-2.png','Sol_3-3.png','Sol_3-4.png','Sol_3-5.png',
+        'Sol_3-6.png','Sol_3-7.png','Sol_3-8.png','Sol_3-9.png','Sol_3-10.png',
+        'Sol_3-11.png','Sol_3-12.png'
+      ] %}
+        <div class="gallery-card">
+          <img src="{{ url_for('static', filename='images/' + img) }}" alt="Feature Icon">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

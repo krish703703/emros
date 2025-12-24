@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <img 
+    src="{{ url_for('static', filename='images/energy.png') }}" 
+    alt="Energy Management System" 
+    class="page-header-bg"
+  >
+  
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
+    <h1>Energy Management System</h1>
+    <p>Reduce energy costs while keeping guests comfortable</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div>
+      <h2>Reduce energy waste without affecting guest comfort</h2>
+      <p class="lead-text">
+        The EMROS Energy Management System helps hotels reduce energy consumption and operating costs through intelligent automation. It ensures energy is used only when required, while guest comfort remains unchanged.
+      </p>
+
+      <p>
+        By managing electricity and HVAC usage across rooms, EMS supports sustainability goals and improves overall efficiency — without guests noticing any difference in their stay.
+      </p>
+
+      <h3>EMS helps hotels to:</h3>
+      <ul class="feature-list">
+        <li>Reduce unnecessary electricity and HVAC usage</li>
+        <li>Lower energy and utility costs</li>
+        <li>Support sustainability and environmental goals</li>
+        <li>Automate energy control across guest rooms</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/sol_4_energy saving.jpg') }}" alt="Energy Consumption Chart">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <img src="{{ url_for('static', filename='images/sol_4-1.jpg') }}" alt="Sustainable Earth" style="width: 100%; max-height: 400px; object-fit: cover;">
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div class="card text-center">
+      <img src="{{ url_for('static', filename='images/sol_4-3.png') }}" alt="Energy Controller">
+      <h3 style="margin-top: 20px;">Intelligent Controller</h3>
+    </div>
+    <div class="card text-center">
+      <img src="{{ url_for('static', filename='images/sol_4-2.png') }}" alt="Thermostat Interface">
+      <h3 style="margin-top: 20px;">Guest Interface</h3>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

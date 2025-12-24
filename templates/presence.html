@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <img 
+    src="{{ url_for('static', filename='images/guest-presence.png') }}" 
+    alt="Guest Presence System" 
+    class="page-header-bg"
+  >
+  <div class="page-header-overlay"></div>
+
+  <div class="container relative-content">
+    <h1>Guest Presence System</h1>
+    <p>Know when a room is occupied — without disturbing the guest</p>
+  </div>
+</section>
+
+<section class="container section-spacer-sm">
+  <div class="grid two align-center">
+    <div>
+      <h2>Know whether a guest is in the room — clearly and safely</h2>
+      <p class="lead-text">
+        The EMROS Guest Presence System helps hotel staff know whether a room is occupied or vacant, without knocking or disturbing the guest.
+      </p>
+
+      <p>
+        Using discreet motion sensors and door sensors, the system automatically updates room status, improving staff awareness while maintaining guest privacy.
+      </p>
+
+      <h3>This helps hotels to:</h3>
+      <ul class="feature-list">
+        <li>Know whether a guest is inside the room</li>
+        <li>Avoid entering rooms when guests are present</li>
+        <li>Approach rooms at the right time</li>
+        <li>Improve staff awareness without disturbing guests</li>
+      </ul>
+    </div>
+
+    <div class="image-block">
+      <img src="{{ url_for('static', filename='images/sol_2.jpg') }}" alt="Hotel Room Interior" class="shadow-img">
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer bg-light">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <h2>System Components</h2>
+    </div>
+    <div class="grid two align-center">
+      <div class="card text-center">
+        <img src="{{ url_for('static', filename='images/Sol_2.png') }}" alt="Presence Logic Diagram" style="margin: 0 auto;">
+        <p style="margin-top: 16px;">Logic Flow</p>
+      </div>
+      <div class="card text-center">
+        <img src="{{ url_for('static', filename='images/Sol_2-2.png') }}" alt="Sensor Hardware" style="margin: 0 auto;">
+        <p style="margin-top: 16px;">Wireless Sensor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
