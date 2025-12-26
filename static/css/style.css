@@ -196,7 +196,7 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 
 /* DROPDOWN MENU */
 .dropdown {
-  position: absolute; top: 100%; left: 0;
+  position: absolute; top: 180%; left: 0;
   width: 280px; padding: 12px;
   border-radius: 12px;
   opacity: 0; visibility: hidden;
@@ -322,9 +322,10 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 
 .hero-banner-img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  z-index: -2; /* Ensures it sits above ambient-background (-999) */
+  z-index: -2;
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  border-radius: 0; /* Removes the rounded corners */
 }
 
 .hero-overlay {
@@ -455,13 +456,13 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 /* =========================
    SPECIAL SECTIONS
 ========================= */
-/* .bg-dark modified to look like card without lift */
+/* .bg-dark modified to be theme-adaptive */
 .bg-dark {
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--glass-bg); /* Now switches between light/dark automatically */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius);
-  color: white;
+  color: var(--text-main); /* Text now switches color automatically */
   margin: 0 24px; 
   padding: 40px;
   border: 1px solid var(--glass-border);
@@ -469,7 +470,7 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 }
 
 .bg-dark h2, .bg-dark p, .bg-dark .lead-text {
-  color: white;
+  color: var(--text-main); /* Ensures headers and text also adapt */
 }
 
 .bg-light { background: transparent; }
@@ -487,11 +488,13 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 .page-header-bg {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   z-index: 0; opacity: 0.6;
+  border-radius: 0; /* Removes the rounded corners */
 }
 
 .page-header-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 0%, transparent 80%, var(--bg-color) 100%);
+  /* Gradient removed to eliminate the fade-to-bottom effect */
+  background: none;
   z-index: 1;
 }
 
@@ -564,4 +567,100 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
     box-shadow: none; padding-left: 20px; transform: none; 
   }
   .dropdown::before { display: none; }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS FIXES
+   (Add to the bottom of style.css)
+========================= */
+
+@media (max-width: 768px) {
+
+  /* 1. Fix Typography Sizing */
+  /* Override the fixed 56px font-size in the hero section */
+  .hero-content h1 {
+    font-size: 2.5rem; 
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  /* Scale down page headers */
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+    padding: 0 16px; /* Prevent text touching edges */
+  }
+
+  /* 2. Reduce Excessive Spacing */
+  /* 120px is too much gap for mobile, reduce to 60px */
+  .section-spacer {
+    padding: 60px 0;
+  }
+  
+  .section-spacer-sm {
+    padding: 40px 0;
+  }
+
+  /* Reduce internal card padding to save screen width */
+  .card, .bg-dark {
+    padding: 24px;
+  }
+  
+  /* Ensure container has breathing room on small edges */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* 3. Hero Section Adjustments */
+  .hero-banner {
+    /* Remove the tall fixed height so it adapts to content */
+    min-height: auto;
+    height: auto;
+    /* Add padding to account for the header and content */
+    padding-top: 130px; 
+    padding-bottom: 60px;
+    margin-top: -73px;
+  }
+
+  /* Center the hero text and image overlay */
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* Make the text easier to read on mobile by darkening the overlay slightly more */
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.95) 100%);
+  }
+
+  /* 4. Page Header (Subpages) Height Fix */
+  .page-header {
+    padding: 110px 0 60px; /* Reduce top padding */
+  }
+
+  /* 5. Mobile Menu Refinements */
+  /* Add hierarchy to the dropdown links in the mobile menu */
+  .dropdown a {
+    background-color: rgba(255, 255, 255, 0.03);
+    margin-left: 10px; /* Indent sub-menu items */
+    border-left: 2px solid var(--primary); /* Add a visual indicator */
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* 6. Grid & Layout Tweaks */
+  /* Ensure gallery images don't get too small or misaligned */
+  .grid.gallery {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on mobile */
+    gap: 16px;
+  }
+
+  /* Fix button width on mobile */
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
 }
