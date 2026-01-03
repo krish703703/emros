@@ -550,52 +550,80 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
 
   .mobile-only { display: block; }
   
-  /* Glass Mobile Menu */
+  /* =========================================
+     MOBILE MENU & DROPDOWN (Opaque & Adaptive)
+     ========================================= */
+
+  /* 1. Mobile Menu Container */
   .primary-nav {
     display: none; position: absolute; top: 72px; left: 0; right: 0;
-    flex-direction: column; background: var(--glass-bg);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    flex-direction: column; 
+    
+    /* Solid, adaptive background (No Blur) */
+    background-color: var(--bg-color); 
+    backdrop-filter: none; 
+    -webkit-backdrop-filter: none;
+    
     padding: 24px; border-bottom: 1px solid var(--glass-border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
   .primary-nav.open { display: flex; }
   .nav-item { width: 100%; display: block; height: auto; margin-bottom: 10px; }
   
+  /* 2. Mobile Dropdowns */
   .dropdown { 
     position: static; width: 100%; opacity: 1; 
-    visibility: visible; background: none; border: none;
-    box-shadow: none; padding-left: 20px; transform: none; 
+    visibility: visible; 
+    
+    /* Solid, adaptive background (No Blur) */
+    background-color: var(--dropdown-bg) !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    
+    /* Card Styling */
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    
+    transform: none; 
   }
   .dropdown::before { display: none; }
+  
+  /* Link Styling inside Dropdown */
+  .dropdown a {
+    padding-left: 12px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
 }
 
 /* =========================
    MOBILE RESPONSIVENESS FIXES
-   (Add to the bottom of style.css)
+   (Font sizes, spacing, hero height, image adjustments)
 ========================= */
-
 @media (max-width: 768px) {
 
   /* 1. Fix Typography Sizing */
-  /* Override the fixed 56px font-size in the hero section */
   .hero-content h1 {
     font-size: 2.5rem; 
     line-height: 1.2;
     margin-bottom: 1rem;
   }
 
-  /* Scale down page headers */
   .page-header h1 {
     font-size: 2rem;
   }
   
   .page-header p {
     font-size: 1rem;
-    padding: 0 16px; /* Prevent text touching edges */
+    padding: 0 16px;
   }
 
   /* 2. Reduce Excessive Spacing */
-  /* 120px is too much gap for mobile, reduce to 60px */
   .section-spacer {
     padding: 60px 0;
   }
@@ -604,63 +632,72 @@ img { max-width: 100%; display: block; height: auto; border-radius: var(--radius
     padding: 40px 0;
   }
 
-  /* Reduce internal card padding to save screen width */
   .card, .bg-dark {
     padding: 24px;
   }
   
-  /* Ensure container has breathing room on small edges */
   .container {
     padding: 0 20px;
   }
 
   /* 3. Hero Section Adjustments */
   .hero-banner {
-    /* Remove the tall fixed height so it adapts to content */
     min-height: auto;
     height: auto;
-    /* Add padding to account for the header and content */
-    padding-top: 130px; 
+    
+    /* REMOVE Negative Margin so content starts AFTER the navbar gap */
+    margin-top: 0;
+    
+    /* Adjust padding to standard size since we are no longer pulling it up */
+    padding-top: 60px; 
     padding-bottom: 60px;
-    margin-top: -73px;
+  }
+  
+  /* 3b. Hero Image Left Align */
+  .hero-banner-img {
+    object-position: left center; /* Left align the image */
   }
 
-  /* Center the hero text and image overlay */
   .hero-content {
     align-items: center;
     text-align: center;
     padding: 0 20px;
   }
   
-  /* Make the text easier to read on mobile by darkening the overlay slightly more */
   .hero-overlay {
     background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.95) 100%);
   }
 
-  /* 4. Page Header (Subpages) Height Fix */
+  /* 4. Page Header Height & Spacing Fix */
   .page-header {
-    padding: 110px 0 60px; /* Reduce top padding */
+    /* REMOVE Negative Margin */
+    margin-top: 0;
+    
+    /* Standard Padding */
+    padding: 60px 0 60px;
+    
+    /* Adds a clean space after the banner image before the next content starts */
+    margin-bottom: 40px; 
   }
 
-  /* 5. Mobile Menu Refinements */
-  /* Add hierarchy to the dropdown links in the mobile menu */
-  .dropdown a {
-    background-color: rgba(255, 255, 255, 0.03);
-    margin-left: 10px; /* Indent sub-menu items */
-    border-left: 2px solid var(--primary); /* Add a visual indicator */
-    border-radius: 0 8px 8px 0;
-  }
-
-  /* 6. Grid & Layout Tweaks */
-  /* Ensure gallery images don't get too small or misaligned */
+  /* 5. Grid Fixes */
   .grid.gallery {
-    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on mobile */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  /* Fix button width on mobile */
   .btn {
     width: 100%;
     max-width: 300px;
+  }
+  
+  /* 6. Square Crop for Specific Images */
+  img[src*="home-5.png"],
+  img[src*="home-6.png"],
+  img[src*="sol-privacy-service-2.png"] {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
   }
 }
