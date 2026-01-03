@@ -17,12 +17,12 @@
   <meta property="og:site_name" content="EMROS">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="Smart hotel technologies for privacy, comfort, and efficiency.">
-  <meta property="og:image" content="{{ url_for('static', filename='images/home-2.png', _external=True) }}">
+  <meta property="og:image" content="{{ url_for('static', filename='images/home-2.webp', _external=True) }}">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="Smart technology. Silent comfort. Better hotels.">
-  <meta name="twitter:image" content="{{ url_for('static', filename='images/home-2.png', _external=True) }}">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/home-2.webp', _external=True) }}">
 
   <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
 
@@ -38,7 +38,7 @@
     })();
   </script>
 
-  <link rel="preload" as="image" href="{{ url_for('static', filename='images/home-2.png') }}">
+  <link rel="preload" as="image" href="{{ url_for('static', filename='images/home-2.webp') }}">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/utilities.css') }}">
@@ -113,7 +113,7 @@
   "@type": "Organization",
   "name": "EMROS",
   "url": "{{ request.url_root }}",
-  "logo": "{{ url_for('static', filename='images/home-2.png', _external=True) }}",
+  "logo": "{{ url_for('static', filename='images/home-2.webp', _external=True) }}",
   "description": "EMROS provides intelligent hotel room technologies for privacy, comfort, energy efficiency, and operational excellence.",
   "contactPoint": {
     "@type": "ContactPoint",
